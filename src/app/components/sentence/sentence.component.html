@@ -1,0 +1,22 @@
+<h3 id="tableLabel">Currently Saved Sentences</h3>
+<br>
+
+<p *ngIf="!sentenceList"><em>Loading...</em></p>
+
+<table class='table table-striped table-hover table-bordered table-responsive' aria-labelledby="tableLabel" *ngIf="sentenceList">
+  <thead>
+    <tr>
+      <th>Sentence</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sentence of sentenceList">
+      <td>{{ sentence.sentence }}</td>
+      <td><button class="btn btn-danger pull-right" type="button" (click)="removeSentence(sentence.id)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<a routerLink="/create-sentence"><button class="btn btn-success pull-right">Create Sentence</button></a>

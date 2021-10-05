@@ -1,0 +1,73 @@
+<div class="container" *ngIf="words">
+    <div>
+      <u>Nouns</u>
+    </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.nouns" [word]="word"></word-item>
+      <br />
+      <br />
+      <div>
+      <u>Adjectives</u>
+      </div>
+        <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.adjectives" [word]="word"></word-item>
+      <br />
+      <br />
+      <div>
+        <u>Adverbs</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.adverbs" [word]="word"></word-item>
+
+  <br />
+  <br />
+
+      <div>
+        <u>Pronouns</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.pronouns" [word]="word"></word-item>
+  <br />
+  <br />
+
+      <div>
+        <u>Prepositions</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.prepositions" [word]="word"></word-item>
+
+  <br />
+  <br />
+
+      <div>
+        <u>Conjunctions</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.conjunctions" [word]="word"></word-item>
+
+  <br />
+  <br />
+
+      <div>
+        <u>Determiners</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.determiners" [word]="word"></word-item>
+
+  <br />
+  <br />
+
+      <div>
+        <u>Exclamations</u>
+      </div>
+      <word-item (selectedWord)="constructSentence($event)" *ngFor="let word of words.exclamations" [word]="word"></word-item>
+      <br />
+      <br />
+    </div>
+<div class="container">
+    <div>
+      <u>Sentence</u>
+      <div>
+        {{sentence}}
+      </div>
+    </div>
+    <br>
+<div class="">
+  <a style="padding-right: 5px;" routerLink="/"><button class="btn btn-success">Home</button></a>
+  <button class="btn btn-success" type="button" (click)="SaveSentence()">Save Sentence</button>
+</div>
+</div>
+<br>
